@@ -43,8 +43,8 @@ function App() {
   return (
     <div className="container">
       <header>
-        <h1>AI Basics with Groq</h1>
-        <p>Ask anything and get a response from Llama 3!</p>
+        <h1>AI Basics with Kanchan </h1>
+        <p>Ask anything and get a response from Kanchan!</p>
       </header>
       
       <main>
