@@ -31,6 +31,18 @@ In this project, we implemented **Short-Term Memory** by:
 2. **Context Window**: Before sending a new prompt to the AI, we fetch a "sliding window" of the most recent messages (e.g., the last 10 messages).
 3. **Injecting History**: We send this history back to the AI with the new query, effectively giving it a "short-term memory" so it can maintain the flow of the conversation.
 
+## 📅 Day 3: Embeddings & Vector Search
+On our third day, we dove into how AI understands the "meaning" of words using mathematics:
+- **Semantic Similarity Project**: Built a full-stack application (React/Node.js) where users can provide several phrases and find the best match for a question based on context, not keywords.
+- **Gemini Embeddings**: Integrated the `gemini-embedding-001` model to convert text into 1536-dimensional vectors.
+- **Vector Math**: Implemented the "Dot Product" formula to calculate how similar two vectors are.
+
+### 🧠 The Tip of the Iceberg
+Day 3 taught us that **Embeddings** are the "Digital Brain" of AI. While we only compared a few sentences today, this concept is the absolute foundation for everything that comes next. 
+
+**Why is this necessary?**
+Because standard keyword search only looks for exact words. If you ask "Where is the car?" it might not find "The vehicle is in the garage." But with embeddings, the AI knows that **"car"** and **"vehicle"** are similar. This is exactly how tools like Google Search and ChatGPT find information!
+
 ## 🛠️ Prerequisites
 This journey is designed for developers who already have experience with:
 - **JavaScript**
