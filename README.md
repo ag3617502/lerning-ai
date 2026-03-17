@@ -5,7 +5,7 @@ Welcome to our project! This repository documents our journey of learning Artifi
 ## 📅 Day 1: The Beginning
 On our first day, we focused on setting the foundation:
 - **Introduction to AI**: Understanding the core concepts and the importance of LLMs.
-- **Basic Chatbot Project**: A simple AI Chatbot that handles single-question-and-answer interactions.
+- **Basic Chatbot Project**: A simple AI Chatbot that handles single-question-and-answer interactions named Instant Answer AI.
 
 ### 🧠 What is an LLM?
 A Large Language Model (LLM) is a type of AI trained on massive amounts of text data. It can understand, generate, and manipulate human language, making it the backbone of modern AI applications like chatbots and content creators.

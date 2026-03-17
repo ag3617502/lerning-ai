@@ -1,4 +1,4 @@
-# 🚀 Day 3: Giving AI a "Digital Brain" with Embeddings
+# 🚀 Day 3: Giving AI a "Digital Brain" with EmbeddingEngine 
 
 Welcome to **Day 3** of my AI Learning Journey! Today, things got serious. We moved from simple chat completions to understanding how AI actually "thinks" and "searches" through data.
 

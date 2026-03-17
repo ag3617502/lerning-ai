@@ -1,4 +1,4 @@
-# Day 2: AI Personal Assistant - Modular Architecture & Authentication
+# Day 2: AI Personal Assistant - Modular Architecture & Authentication with Context Aware AI
 
 Welcome to Day 2 of the AI Learning Journey! Today, the project transitioned from a basic script to a professional, scalable application with a modular backend and secure user authentication.
 

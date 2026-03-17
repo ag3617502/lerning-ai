@@ -1,4 +1,4 @@
-# Day 1: Understanding LLMs & Building a Basic AI Chatbot
+# Day 1: Understanding LLMs & Building a Basic AI Chatbot with Instant Answer AI 
 
 Welcome to Day 1 of my AI learning journey.  
 Today I started exploring **Large Language Models (LLMs)** and integrated an AI model into a simple chatbot application.
