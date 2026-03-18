@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { BrowserRouter, Routes, Route, useNavigate, useParams, Link, Navigate } from 'react-router-dom'
+import MarkdownRenderer from './components/MarkdownRenderer'
+import { Menu } from 'lucide-react'
 import './App.css'
 
 /**
@@ -90,9 +92,9 @@ function Auth({ setUser }) {
  * Sidebar Component with User Context.
  * Shows conversations and a logout button.
  */
-function Sidebar({ conversations, currentId, onNewChat, onLogout, userEmail }) {
+function Sidebar({ conversations, currentId, onNewChat, onLogout, userEmail, isOpen, onSelectChat }) {
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
       <button className="new-chat-btn" onClick={onNewChat}>+ New Chat</button>
       <div className="conversation-list">
         {conversations.map(conv => (
@@ -100,6 +102,7 @@ function Sidebar({ conversations, currentId, onNewChat, onLogout, userEmail }) {
             key={conv.id} 
             to={`/chat/${conv.id}`}
             className={`conversation-item ${currentId === conv.id ? 'active' : ''}`}
+            onClick={onSelectChat}
           >
             {conv.snippet}
           </Link>
@@ -118,7 +121,7 @@ function Sidebar({ conversations, currentId, onNewChat, onLogout, userEmail }) {
  * Main Chat View.
  * All API calls now include the JWT Bearer token for authentication.
  */
-function ChatView({ user, fetchConversations, messages, setMessages, input, setInput, loading, setLoading, hasMore, setHasMore, offset, setOffset }) {
+function ChatView({ user, fetchConversations, messages, setMessages, input, setInput, loading, setLoading, hasMore, setHasMore, offset, setOffset, toggleSidebar }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const messagesEndRef = useRef(null);
@@ -241,7 +244,10 @@ function ChatView({ user, fetchConversations, messages, setMessages, input, setI
   return (
     <main className="main-chat">
       <header className="chat-header">
-        <h1>AI Personal Assistant</h1>
+        <button className="menu-btn" onClick={toggleSidebar} title="Toggle Sidebar">
+          <Menu size={24} />
+        </button>
+        <h1 style={{color:'white'}}>AI Personal Assistant(Context Aware AI)</h1>
       </header>
 
       <div className="chat-messages" ref={chatContainerRef}>
@@ -255,7 +261,11 @@ function ChatView({ user, fetchConversations, messages, setMessages, input, setI
         )}
         {messages.map((msg, i) => (
           <div key={i} className={`message ${msg.role}`}>
-            {msg.content}
+            {msg.role === 'assistant' ? (
+              <MarkdownRenderer content={msg.content} />
+            ) : (
+              msg.content
+            )}
           </div>
         ))}
         <div ref={messagesEndRef} />
@@ -300,6 +310,7 @@ function AppContent() {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(false);
   const [offset, setOffset] = useState(0);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => window.innerWidth > 1024);
   
   const { id } = useParams();
   const navigate = useNavigate();
@@ -340,17 +351,29 @@ function AppContent() {
     input, setInput,
     loading, setLoading,
     hasMore, setHasMore,
-    offset, setOffset
+    offset, setOffset,
+    toggleSidebar: () => setIsSidebarOpen(!isSidebarOpen)
   };
 
   return (
     <div className="app-container">
+      <div 
+        className={`sidebar-overlay ${isSidebarOpen ? 'visible' : ''}`} 
+        onClick={() => setIsSidebarOpen(false)} 
+      />
       <Sidebar 
         conversations={conversations} 
         currentId={id} 
-        onNewChat={() => navigate('/')} 
+        onNewChat={() => {
+          navigate('/');
+          if (window.innerWidth <= 1024) setIsSidebarOpen(false);
+        }} 
         onLogout={handleLogout}
         userEmail={user.email}
+        isOpen={isSidebarOpen}
+        onSelectChat={() => {
+          if (window.innerWidth <= 1024) setIsSidebarOpen(false);
+        }}
       />
       <Routes>
         <Route path="/" element={<ChatView {...chatProps} />} />

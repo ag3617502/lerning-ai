@@ -36,6 +36,19 @@ body {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 100; /* Ensure sidebar is always on top */
+}
+
+.sidebar.closed {
+  width: 0;
+  border-right: none;
+}
+
+.sidebar-overlay {
+  display: none; /* hidden on desktop */
 }
 
 .new-chat-btn {
@@ -100,11 +113,33 @@ body {
   background-color: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(8px);
   z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-btn {
+  background: transparent;
+  color: var(--text-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .chat-messages {
   flex: 1;
   overflow-y: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -133,6 +168,8 @@ body {
   padding: 1rem;
   border-radius: 12px;
   line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .message.user {
@@ -321,3 +358,201 @@ body {
   text-align: center;
 }
 
+
+/* Markdown & Code Block Styles */
+.message.assistant {
+  align-self: flex-start;
+  background-color: var(--bg-secondary);
+  border-bottom-left-radius: 2px;
+  border: 1px solid var(--border);
+  max-width: 100%;
+  /* fallback if 80% isn't applied correctly */
+}
+
+.code-block-container {
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: #0d1117;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  /* Never exceed parent container */
+  height: auto;
+}
+
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #161b22;
+  border-bottom: 1px solid var(--border);
+}
+
+.code-language {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+.copy-btn.copied {
+  color: #10b981;
+  border-color: #10b981;
+}
+
+.copy-btn span {
+  font-weight: 500;
+}
+
+.code-content {
+  font-size: 0.9rem;
+}
+
+.code-content pre {
+  margin: 0 !important;
+  background: transparent !important;
+  padding: 1rem !important;
+  height: auto !important;
+  overflow-x: auto !important; /* Allow internal horizontal scrolling for code */
+  white-space: pre !important; /* Only break lines on native \n */
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  display: block !important; /* Force block layout, no flex/grid bugs */
+}
+
+.code-content code {
+  white-space: pre !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  display: inline !important; /* Keep as inline text */
+}
+
+.inline-code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+}
+
+/* General Markdown styling */
+.message.assistant p {
+  margin-bottom: 1rem;
+}
+
+.message.assistant p:last-child {
+  margin-bottom: 0;
+}
+
+.message.assistant ul,
+.message.assistant ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.message.assistant li {
+  margin-bottom: 0.5rem;
+}
+
+.message.assistant h1,
+.message.assistant h2,
+.message.assistant h3 {
+  margin: 1.5rem 0 1rem 0;
+  color: var(--accent);
+}
+
+.message.assistant a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.message.assistant a:hover {
+  text-decoration: underline;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: absolute;
+    height: 100vh;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.4);
+  }
+  .sidebar-overlay.visible {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 90;
+  }
+  .chat-header {
+    padding: 1rem 1.5rem;
+  }
+  .chat-messages {
+    padding: 1.5rem;
+  }
+  .message {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-header h1 {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chat-header {
+    padding: 0.8rem 1rem;
+    gap: 0.5rem;
+  }
+  .chat-messages {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .input-area {
+    padding: 1rem;
+  }
+  .message {
+    max-width: 95%;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+  .code-block-header {
+    padding: 0.4rem 0.8rem;
+  }
+  .code-content pre {
+    padding: 0.8rem !important;
+  }
+  .auth-card {
+    padding: 1.5rem;
+    margin: 1rem;
+    width: 90%;
+  }
+}
