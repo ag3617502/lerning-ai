@@ -43,8 +43,8 @@ function App() {
   return (
     <div className="container">
       <header>
-        <h1>AI Basics with Kanchan </h1>
-        <p>Ask anything and get a response from Kanchan!</p>
+        <h1>AI Basics  </h1>
+        <p>Ask anything and get a response !</p>
       </header>
       
       <main>
