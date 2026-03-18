@@ -10,6 +10,8 @@ On our first day, we focused on setting the foundation:
 ### 🧠 What is an LLM?
 A Large Language Model (LLM) is a type of AI trained on massive amounts of text data. It can understand, generate, and manipulate human language, making it the backbone of modern AI applications like chatbots and content creators.
 
+👉 Live Demo: https://ag3617502.github.io/instaAI/
+
 ## 📅 Day 2: Advanced Foundation
 On our second day, we leveled up our project with a modular architecture and intelligent state management:
 - **Modular Backend Architecture**: Refactored the code into an MVC pattern (Models, Controllers, Routes) for better scalability.
