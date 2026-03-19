@@ -33,6 +33,8 @@ In this project, we implemented **Short-Term Memory** by:
 2. **Context Window**: Before sending a new prompt to the AI, we fetch a "sliding window" of the most recent messages (e.g., the last 10 messages).
 3. **Injecting History**: We send this history back to the AI with the new query, effectively giving it a "short-term memory" so it can maintain the flow of the conversation.
 
+👉 Live Demo: https://ag3617502.github.io/contextAwareAIFE
+
 ## 📅 Day 3: Embeddings & Vector Search
 On our third day, we dove into how AI understands the "meaning" of words using mathematics:
 - **Semantic Similarity Project**: Built a full-stack application (React/Node.js) where users can provide several phrases and find the best match for a question based on context, not keywords.
@@ -45,12 +47,16 @@ Day 3 taught us that **Embeddings** are the "Digital Brain" of AI. While we only
 **Why is this necessary?**
 Because standard keyword search only looks for exact words. If you ask "Where is the car?" it might not find "The vehicle is in the garage." But with embeddings, the AI knows that **"car"** and **"vehicle"** are similar. This is exactly how tools like Google Search and ChatGPT find information!
 
+👉 Live Demo: https://ag3617502.github.io/EmbeddingEngineFE
+
 ---
 
 ## 📅 Day 4: High-Performance Memory with Vector Databases
 On our fourth day, we moved from basic context to **Long-Term Context** using Vector Databases:
 - **VectorHub**: A foundation for semantic search using Gemini embeddings and ChromaDB.
+👉 Live Demo: https://ag3617502.github.io/vectorhub
 - **MultiVectorStore**: Advanced multi-chat isolation using metadata filtering, allowing private conversational memory for different sessions.
+👉 Live Demo: https://ag3617502.github.io/multivector/
 
 ### 🧠 The Power of Vector Databases
 Day 4 was all about scaling AI memory. We learned that by using **Metadata Filtering**, we can build complex, isolated workspaces where each user or session has its own private "knowledge base." This is the core technology behind modern **RAG (Retrieval-Augmented Generation)** systems.

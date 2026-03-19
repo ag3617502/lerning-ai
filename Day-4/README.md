@@ -36,9 +36,12 @@ This folder contains two main projects that build upon each other:
 
 ### 1. [VectorHub](./VectorHub)
 A foundational semantic search project. It takes a list of strings, generates embeddings using Gemini, and stores them in ChromaDB for simple, meaning-based retrieval.
+👉 Live Demo: https://ag3617502.github.io/vectorhub
 
 ### 2. [MultiVectorStore](./MultiVectorStore)
 An advanced implementation featuring **Isloated Workspaces**. It uses MongoDB to manage chat sessions and ChromaDB's **metadata filtering** to ensure that search results are strictly isolated to the active chat.
+👉 Live Demo: https://ag3617502.github.io/multivector/
+
 
 ---
 

@@ -1,5 +1,5 @@
 # VectorHub - Semantic Search with Vector DB
-
+👉 Live Demo: https://ag3617502.github.io/vectorhub
 VectorHub is a full-stack application designed to demonstrate the power of **Semantic Search** using **Vector Databases**. Unlike traditional keyword-based search, semantic search understands the *meaning* and *context* of your data, allowing it to find relevant results even when the exact words don't match.
 
 ## 🚀 Overview

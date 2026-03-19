@@ -1,5 +1,5 @@
 # 🚀 Day 3: Giving AI a "Digital Brain" with EmbeddingEngine 
-
+👉 Live Demo: https://ag3617502.github.io/EmbeddingEngineFE
 Welcome to **Day 3** of my AI Learning Journey! Today, things got serious. We moved from simple chat completions to understanding how AI actually "thinks" and "searches" through data.
 
 > "If LLMs are the engine, Embeddings are the map." 🗺️

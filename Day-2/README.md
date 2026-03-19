@@ -1,5 +1,5 @@
 # Day 2: AI Personal Assistant - Modular Architecture & Authentication with Context Aware AI
-
+👉 Live Demo: https://ag3617502.github.io/contextAwareAIFE
 Welcome to Day 2 of the AI Learning Journey! Today, the project transitioned from a basic script to a professional, scalable application with a modular backend and secure user authentication.
 
 ---
