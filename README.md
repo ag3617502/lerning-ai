@@ -68,6 +68,20 @@ I am taking a short pause here to prepare for **Day 5**! On Day 5, I will explai
 
 ---
 
+## 📅 Day 6: Full-Stack Context-Aware AI Chatbot
+On our sixth day, we bridged isolated AI scripts into a fully functional, production-ready Full-Stack Document-Chat application:
+- **Langchain Basics**: Solidified our understanding of LangChain by mastering basic invoking, roles, parameters, streaming, and batching.
+- **Backend Architecture**: Constructed a secure RESTful Express API connected to MongoDB, featuring JWT authentication, file uploads, and modular design.
+- **AI & Vector DB Integration**: Parsed PDFs, converted text into vectors using Gemini, upserted to Hosted ChromaDB Cloud, and used LangChain with Groq to answer user queries exclusively based on their uploaded documents.
+- **Frontend Development**: Brought the application to life with React, Vite, and TailwindCSS using Atomic Design, featuring a conversational history sidebar, drag-and-drop upload area, and interactive chat interface.
+
+### 🧠 Building a Complete AI Application (AskDocs)
+Day 6 was a massive milestone. We evolved from simple AI scripting to architecting a highly scalable, authenticated, full-stack LLM application driven by a powerful Vector Database. Users can now sign up, create isolated conversation threads, upload their PDF documents, and effortlessly chat with their exact data!
+
+👉 Live Demo: https://ag3617502.github.io/AskDocs
+
+---
+
 ## 🛠️ Prerequisites
 This journey is designed for developers who already have experience with:
 - **JavaScript**
