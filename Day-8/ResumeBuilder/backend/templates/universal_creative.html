@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{NAME}} — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Raleway', sans-serif; background: #fff; color: #1a1a1a; font-size: 12px; }
+  .resume { width: 794px; min-height: 1123px; display: grid; grid-template-columns: 240px 1fr; }
+  .sidebar { background: #be185d; color: #fff; padding: 40px 22px; display: flex; flex-direction: column; gap: 26px; position: relative; overflow: hidden; }
+  .sidebar::before { content: ''; position: absolute; bottom: -60px; left: -60px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.06); }
+  .sidebar::after { content: ''; position: absolute; top: 100px; right: -40px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+  .avatar-hex { width: 80px; height: 80px; background: rgba(255,255,255,0.2); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; margin: 0 auto; }
+  .s-name { text-align: center; font-size: 16px; font-weight: 800; margin-top: 8px; line-height: 1.2; }
+  .s-role { text-align: center; font-size: 10px; color: rgba(255,255,255,0.75); margin-top: 4px; text-transform: uppercase; letter-spacing: 1.5px; }
+  .s-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+  .s-divider { height: 1px; background: rgba(255,255,255,0.2); }
+  .contact-item { font-size: 10px; color: rgba(255,255,255,0.9); margin-bottom: 7px; display: flex; gap: 7px; align-items: center; }
+  .skill-tag { display: block; background: rgba(255,255,255,0.15); border-left: 3px solid rgba(255,255,255,0.6); padding: 5px 10px; font-size: 10px; color: #fff; margin-bottom: 5px; font-weight: 500; }
+  .main { padding: 36px 32px; display: flex; flex-direction: column; gap: 22px; }
+  .section-title { font-size: 13px; font-weight: 800; color: #be185d; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1.5px; display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 2px; background: linear-gradient(to right, #be185d33, transparent); }
+  .summary-text { font-size: 12px; color: #374151; line-height: 1.75; }
+  .exp-item { margin-bottom: 14px; background: #fff9fb; border-left: 3px solid #be185d; padding: 10px 12px; border-radius: 4px; }
+  .exp-header strong { font-size: 13px; font-weight: 700; color: #1a1a1a; }
+  .exp-company { font-size: 11px; color: #be185d; font-weight: 600; }
+  .exp-duration { font-size: 10px; color: #9ca3af; float: right; }
+  .exp-desc { font-size: 11px; color: #6b7280; margin-top: 5px; line-height: 1.5; }
+  .edu-item { margin-bottom: 10px; }
+  .edu-item strong { font-size: 12px; color: #1a1a1a; display: block; }
+  .edu-item span { font-size: 11px; color: #6b7280; }
+  .bullets-list { padding-left: 16px; }
+  .bullets-list li { font-size: 11px; color: #374151; margin-bottom: 5px; line-height: 1.5; }
+  .bullets-list li::marker { color: #be185d; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="sidebar">
+    <div>
+      <div class="avatar-hex">{{NAME}}</div>
+      <div class="s-name">{{NAME}}</div>
+      <div class="s-role">{{TARGET_ROLE}}</div>
+    </div>
+    <div class="s-divider"></div>
+    <div>
+      <div class="s-label">Contact</div>
+      <div class="contact-item">✉ {{EMAIL}}</div>
+      <div class="contact-item">📱 {{PHONE}}</div>
+      <div class="contact-item">📍 {{LOCATION}}</div>
+    </div>
+    <div class="s-divider"></div>
+    <div>
+      <div class="s-label">Expert Skills</div>
+      {{SKILLS}}
+    </div>
+    <div class="s-divider"></div>
+    <div>
+      <div class="s-label">Education</div>
+      {{EDUCATION}}
+    </div>
+  </div>
+  <div class="main">
+    <div>
+      <div class="section-title">Profile</div>
+      <p class="summary-text">{{SUMMARY}}</p>
+    </div>
+    <div>
+      <div class="section-title">Experience</div>
+      {{EXPERIENCE}}
+    </div>
+    <div>
+      <div class="section-title">Key Wins</div>
+      {{SUGGESTED_BULLETS}}
+    </div>
+  </div>
+</div>
+</body>
+</html>

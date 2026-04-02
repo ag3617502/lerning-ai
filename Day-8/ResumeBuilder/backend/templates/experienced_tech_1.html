@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{NAME}} — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fff; color: #111827; font-size: 12px; }
+  .resume { width: 794px; min-height: 1123px; }
+  .header { background: #0f172a; color: #fff; padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .h-left .h-name { font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 700; }
+  .h-left .h-role { font-size: 12px; color: #3b82f6; margin-top: 4px; font-family: 'JetBrains Mono', monospace; }
+  .h-right { text-align: right; }
+  .h-contact { font-size: 11px; color: #94a3b8; margin-bottom: 4px; }
+  .section-bar { height: 4px; background: linear-gradient(to right, #3b82f6, #1d4ed8, #7c3aed); }
+  .body { padding: 28px 48px; display: flex; flex-direction: column; gap: 22px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #3b82f6; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+  .summary-text { font-size: 12px; color: #374151; line-height: 1.75; }
+  .timeline { border-left: 2px solid #e2e8f0; padding-left: 16px; display: flex; flex-direction: column; gap: 16px; }
+  .timeline-dot { width: 10px; height: 10px; background: #3b82f6; border-radius: 50%; margin-left: -20px; float: left; margin-top: 4px; box-shadow: 0 0 0 3px rgba(59,130,246,0.2); }
+  .exp-item { position: relative; }
+  .exp-item::before { content: ''; position: absolute; left: -21px; top: 5px; width: 10px; height: 10px; background: #3b82f6; border-radius: 50%; box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+  .exp-header strong { font-size: 13px; font-weight: 600; }
+  .exp-company { font-size: 11px; color: #3b82f6; font-weight: 600; }
+  .exp-duration { font-size: 10px; color: #9ca3af; float: right; }
+  .exp-desc { font-size: 11px; color: #6b7280; margin-top: 4px; line-height: 1.5; }
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag { display: inline-block; background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 500; font-family: 'JetBrains Mono', monospace; }
+  .edu-item { margin-bottom: 8px; }
+  .edu-item strong { font-size: 12px; }
+  .edu-item span { font-size: 11px; color: #6b7280; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .bullets-list { padding-left: 16px; }
+  .bullets-list li { font-size: 11px; color: #374151; margin-bottom: 5px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div class="h-left">
+      <div class="h-name">{{NAME}}</div>
+      <div class="h-role">// {{TARGET_ROLE}}</div>
+    </div>
+    <div class="h-right">
+      <div class="h-contact">{{EMAIL}}</div>
+      <div class="h-contact">{{PHONE}}</div>
+      <div class="h-contact">{{LOCATION}}</div>
+    </div>
+  </div>
+  <div class="section-bar"></div>
+  <div class="body">
+    <div>
+      <div class="section-title">Summary</div>
+      <p class="summary-text">{{SUMMARY}}</p>
+    </div>
+    <div>
+      <div class="section-title">Experience</div>
+      <div class="timeline">{{EXPERIENCE}}</div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-title">Education</div>
+        {{EDUCATION}}
+      </div>
+      <div>
+        <div class="section-title">Key Wins</div>
+        {{SUGGESTED_BULLETS}}
+      </div>
+    </div>
+    <div>
+      <div class="section-title">Tech Stack</div>
+      <div class="skills-grid">{{SKILLS}}</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

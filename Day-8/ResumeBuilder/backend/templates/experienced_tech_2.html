@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{NAME}} — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Outfit', sans-serif; background: #fff; font-size: 12px; }
+  .resume { width: 794px; min-height: 1123px; display: grid; grid-template-columns: 280px 1fr; }
+  .sidebar { background: #1e1b4b; color: #fff; padding: 40px 24px; display: flex; flex-direction: column; gap: 28px; }
+  .s-name { font-size: 20px; font-weight: 800; color: #fff; line-height: 1.2; }
+  .s-role { font-size: 11px; color: #a5b4fc; margin-top: 6px; font-weight: 400; text-transform: uppercase; letter-spacing: 1.5px; }
+  .s-divider { height: 1px; background: rgba(255,255,255,0.1); }
+  .s-section { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #818cf8; margin-bottom: 12px; }
+  .contact-item { font-size: 11px; color: #c7d2fe; margin-bottom: 7px; }
+  .skill-bar-wrap { margin-bottom: 10px; }
+  .skill-bar-label { font-size: 10px; color: #c7d2fe; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .skill-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+  .skill-bar-fill { height: 100%; background: linear-gradient(to right, #818cf8, #6366f1); border-radius: 2px; width: 80%; }
+  .skill-tag { display: inline-block; background: rgba(129,140,248,0.2); border: 1px solid rgba(129,140,248,0.4); color: #c7d2fe; padding: 3px 9px; border-radius: 3px; font-size: 10px; margin: 3px 2px; font-weight: 500; }
+  .main { padding: 36px 32px; display: flex; flex-direction: column; gap: 22px; }
+  .section-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #1e1b4b; border-left: 4px solid #6366f1; padding-left: 10px; margin-bottom: 14px; }
+  .summary-text { font-size: 12px; color: #4b5563; line-height: 1.75; }
+  .exp-item { background: #f5f3ff; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; border-left: 3px solid #6366f1; }
+  .exp-header strong { font-size: 13px; font-weight: 700; color: #1e1b4b; }
+  .exp-company { font-size: 11px; color: #6366f1; font-weight: 600; margin-left: 8px; }
+  .exp-duration { font-size: 10px; color: #9ca3af; float: right; }
+  .exp-desc { font-size: 11px; color: #6b7280; margin-top: 6px; line-height: 1.5; }
+  .edu-item { margin-bottom: 10px; }
+  .edu-item strong { font-size: 12px; color: #1e1b4b; display: block; }
+  .edu-item span { font-size: 11px; color: #6b7280; }
+  .bullets-list { padding-left: 16px; }
+  .bullets-list li { font-size: 11px; color: #374151; margin-bottom: 5px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="sidebar">
+    <div>
+      <div class="s-name">{{NAME}}</div>
+      <div class="s-role">{{TARGET_ROLE}}</div>
+    </div>
+    <div class="s-divider"></div>
+    <div>
+      <div class="s-section">Contact</div>
+      <div class="contact-item">✉ {{EMAIL}}</div>
+      <div class="contact-item">📱 {{PHONE}}</div>
+      <div class="contact-item">📍 {{LOCATION}}</div>
+    </div>
+    <div class="s-divider"></div>
+    <div>
+      <div class="s-section">Skills</div>
+      {{SKILLS}}
+    </div>
+    <div class="s-divider"></div>
+    <div>
+      <div class="s-section">Education</div>
+      {{EDUCATION}}
+    </div>
+  </div>
+  <div class="main">
+    <div>
+      <div class="section-title">Professional Profile</div>
+      <p class="summary-text">{{SUMMARY}}</p>
+    </div>
+    <div>
+      <div class="section-title">Experience</div>
+      {{EXPERIENCE}}
+    </div>
+    <div>
+      <div class="section-title">Key Achievements</div>
+      {{SUGGESTED_BULLETS}}
+    </div>
+  </div>
+</div>
+</body>
+</html>

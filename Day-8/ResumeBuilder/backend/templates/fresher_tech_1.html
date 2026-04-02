@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{NAME}} — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fff; color: #1a1a2e; font-size: 13px; }
+  .resume { width: 794px; min-height: 1123px; display: grid; grid-template-columns: 260px 1fr; }
+
+  /* LEFT SIDEBAR */
+  .sidebar { background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 100%); color: #fff; padding: 36px 24px; display: flex; flex-direction: column; gap: 28px; }
+  .avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #00d4ff, #7c3aed); display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 700; color: #fff; margin: 0 auto; }
+  .sidebar-name { text-align: center; font-size: 16px; font-weight: 700; margin-top: 8px; }
+  .sidebar-role { text-align: center; font-size: 11px; color: #94a3b8; margin-top: 4px; }
+  .sidebar-divider { height: 1px; background: rgba(255,255,255,0.12); }
+  .sidebar-section-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #00d4ff; margin-bottom: 10px; }
+  .contact-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #cbd5e1; margin-bottom: 8px; }
+  .contact-icon { font-size: 13px; }
+  .skill-tag { display: inline-block; background: rgba(0,212,255,0.15); border: 1px solid rgba(0,212,255,0.3); color: #00d4ff; padding: 3px 10px; border-radius: 20px; font-size: 10px; margin: 3px 2px; font-weight: 500; }
+
+  /* MAIN CONTENT */
+  .main { padding: 36px 32px; display: flex; flex-direction: column; gap: 24px; }
+  .section-title { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #0f172a; border-bottom: 2px solid #00d4ff; padding-bottom: 6px; margin-bottom: 14px; }
+  .summary-text { font-size: 12px; color: #475569; line-height: 1.7; }
+  .exp-item { margin-bottom: 16px; }
+  .exp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; flex-wrap: wrap; gap: 4px; }
+  .exp-header strong { font-size: 13px; color: #0f172a; }
+  .exp-company { font-size: 11px; color: #00d4ff; font-weight: 600; }
+  .exp-duration { font-size: 10px; color: #94a3b8; }
+  .exp-desc { font-size: 11px; color: #64748b; line-height: 1.6; }
+  .edu-item { margin-bottom: 10px; }
+  .edu-item strong { font-size: 12px; color: #0f172a; }
+  .edu-item span { font-size: 11px; color: #64748b; }
+  .edu-year { float: right; font-size: 10px; color: #94a3b8; }
+  .bullets-list { padding-left: 16px; }
+  .bullets-list li { font-size: 11px; color: #475569; margin-bottom: 5px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="sidebar">
+    <div>
+      <div class="avatar">{{NAME}}</div>
+      <div class="sidebar-name">{{NAME}}</div>
+      <div class="sidebar-role">{{TARGET_ROLE}}</div>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div>
+      <div class="sidebar-section-title">Contact</div>
+      <div class="contact-item"><span class="contact-icon">✉</span>{{EMAIL}}</div>
+      <div class="contact-item"><span class="contact-icon">📱</span>{{PHONE}}</div>
+      <div class="contact-item"><span class="contact-icon">📍</span>{{LOCATION}}</div>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div>
+      <div class="sidebar-section-title">Tech Skills</div>
+      {{SKILLS}}
+    </div>
+  </div>
+  <div class="main">
+    <div>
+      <div class="section-title">Professional Summary</div>
+      <p class="summary-text">{{SUMMARY}}</p>
+    </div>
+    <div>
+      <div class="section-title">Experience</div>
+      {{EXPERIENCE}}
+    </div>
+    <div>
+      <div class="section-title">Education</div>
+      {{EDUCATION}}
+    </div>
+    <div>
+      <div class="section-title">Key Highlights</div>
+      {{SUGGESTED_BULLETS}}
+    </div>
+  </div>
+</div>
+</body>
+</html>

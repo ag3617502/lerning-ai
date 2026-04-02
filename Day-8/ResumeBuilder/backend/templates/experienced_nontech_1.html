@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{NAME}} — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fff; color: #1a1a1a; font-size: 12px; }
+  .resume { width: 794px; min-height: 1123px; }
+  .header { padding: 44px 56px 32px; display: flex; flex-direction: column; gap: 8px; border-bottom: 3px solid #dc2626; }
+  .h-name { font-family: 'Merriweather', serif; font-size: 28px; font-weight: 701; color: #1a1a1a; letter-spacing: -0.5px; }
+  .h-role { font-size: 13px; color: #dc2626; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+  .h-contacts { display: flex; gap: 20px; margin-top: 8px; flex-wrap: wrap; }
+  .h-contact { font-size: 11px; color: #6b7280; }
+  .body { padding: 28px 56px; display: flex; flex-direction: column; gap: 24px; }
+  .section-title { font-family: 'Merriweather', serif; font-size: 13px; font-weight: 700; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .section-title::before { content: ''; display: block; width: 4px; height: 16px; background: #dc2626; border-radius: 2px; }
+  .summary-text { font-size: 12px; color: #4b5563; line-height: 1.8; font-style: italic; }
+  .exp-item { margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid #f3f4f6; }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; }
+  .exp-header strong { font-size: 13px; font-weight: 600; }
+  .exp-company { font-size: 11px; color: #dc2626; font-weight: 600; display: block; margin-top: 2px; }
+  .exp-duration { font-size: 10px; color: #9ca3af; white-space: nowrap; }
+  .exp-desc { font-size: 11px; color: #6b7280; margin-top: 5px; line-height: 1.6; }
+  .skill-tag { display: inline-block; background: #fff; border: 1.5px solid #dc2626; color: #dc2626; padding: 3px 10px; border-radius: 3px; font-size: 10px; margin: 3px 2px; font-weight: 600; }
+  .edu-item { margin-bottom: 10px; }
+  .edu-item strong { font-size: 12px; display: block; }
+  .edu-item span { font-size: 11px; color: #6b7280; }
+  .two-col { display: grid; grid-template-columns: 1fr 220px; gap: 32px; }
+  .bullets-list { padding-left: 16px; }
+  .bullets-list li { font-size: 11px; color: #374151; margin-bottom: 5px; line-height: 1.5; }
+  .bullets-list li::marker { color: #dc2626; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div class="h-name">{{NAME}}</div>
+    <div class="h-role">{{TARGET_ROLE}}</div>
+    <div class="h-contacts">
+      <span class="h-contact">✉ {{EMAIL}}</span>
+      <span class="h-contact">📱 {{PHONE}}</span>
+      <span class="h-contact">📍 {{LOCATION}}</span>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="section-title">Professional Summary</div>
+      <p class="summary-text">{{SUMMARY}}</p>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-title">Professional Experience</div>
+        {{EXPERIENCE}}
+      </div>
+      <div>
+        <div class="section-title">Education</div>
+        {{EDUCATION}}
+        <br>
+        <div class="section-title">Key Skills</div>
+        {{SKILLS}}
+      </div>
+    </div>
+    <div>
+      <div class="section-title">Key Achievements</div>
+      {{SUGGESTED_BULLETS}}
+    </div>
+  </div>
+</div>
+</body>
+</html>

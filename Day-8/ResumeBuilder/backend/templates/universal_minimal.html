@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{NAME}} — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fff; color: #111; font-size: 12px; }
+  .resume { width: 794px; min-height: 1123px; padding: 56px; }
+  .header { border-bottom: 2px solid #111; padding-bottom: 20px; margin-bottom: 28px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .h-name { font-size: 30px; font-weight: 600; letter-spacing: -1px; color: #111; }
+  .h-role { font-size: 12px; color: #666; margin-top: 4px; font-weight: 400; }
+  .h-right { text-align: right; }
+  .h-contact { font-size: 11px; color: #555; margin-bottom: 3px; }
+  .section { margin-bottom: 24px; }
+  .section-title { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #111; margin-bottom: 12px; }
+  .summary-text { font-size: 12px; color: #444; line-height: 1.75; }
+  .exp-item { margin-bottom: 14px; display: grid; grid-template-columns: 1fr auto; column-gap: 8px; }
+  .exp-item strong { font-size: 12.5px; font-weight: 600; }
+  .exp-company { font-size: 11px; color: #444; }
+  .exp-duration { font-size: 10px; color: #888; text-align: right; }
+  .exp-desc { font-size: 11px; color: #555; margin-top: 4px; line-height: 1.6; grid-column: 1 / -1; }
+  .skill-tag { display: inline; font-size: 11px; color: #333; }
+  .skill-tag::after { content: ' · '; color: #bbb; }
+  .skill-tag:last-child::after { content: ''; }
+  .edu-item strong { font-size: 12px; display: block; }
+  .edu-item span { font-size: 11px; color: #555; }
+  .bullets-list { padding-left: 16px; }
+  .bullets-list li { font-size: 11px; color: #444; margin-bottom: 5px; line-height: 1.5; }
+  .rule { border: none; border-top: 1px solid #e5e7eb; margin: 6px 0 18px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div>
+      <div class="h-name">{{NAME}}</div>
+      <div class="h-role">{{TARGET_ROLE}}</div>
+    </div>
+    <div class="h-right">
+      <div class="h-contact">{{EMAIL}}</div>
+      <div class="h-contact">{{PHONE}}</div>
+      <div class="h-contact">{{LOCATION}}</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Summary</div>
+    <hr class="rule">
+    <p class="summary-text">{{SUMMARY}}</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Experience</div>
+    <hr class="rule">
+    {{EXPERIENCE}}
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education</div>
+    <hr class="rule">
+    {{EDUCATION}}
+  </div>
+
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <hr class="rule">
+    {{SKILLS}}
+  </div>
+
+  <div class="section">
+    <div class="section-title">Achievements</div>
+    <hr class="rule">
+    {{SUGGESTED_BULLETS}}
+  </div>
+</div>
+</body>
+</html>

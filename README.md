@@ -82,6 +82,35 @@ Day 6 was a massive milestone. We evolved from simple AI scripting to architecti
 
 ---
 
+## 📅 Day 7: Advanced Chains and Hybrid Search
+On our seventh day, we prepared a rock-solid foundation for building autonomous Agents by mastering LCEL (LangChain Expression Language) and advanced retrieval techniques:
+- **Sequential Chains**: Piped the output of one prompt directly into another to break down complex generation tasks.
+- **Routing Chains**: Dynamically routed user questions to specialized prompts (e.g., Math vs Biology) using `RunnableBranch`.
+- **Parallel Chains**: Executed multiple independent LLM calls concurrently using `RunnableParallel`, drastically cutting down inference time.
+- **Fallback Chains**: Secured our application against API rate limits and crashes by seamlessly failing over to backup LLMs.
+- **Hybrid Search**: Built a custom `Hybrid Retriever` that merges the contextual understanding of Semantic Search (VectorDB) with the exact-matching power of Sparse Search (Keyword matching) to achieve state-of-the-art document retrieval.
+
+### 🧠 Why Strong Foundations Matter
+Before diving into AI Agents that can use tools and make autonomous decisions, you must understand how to manually orchestrate prompts, run them in parallel for speed, and handle runtime API failures safely. Day 7 gives us the tools to build fast, bulletproof, and highly accurate AI architectures!
+
+👉 Code Examples: [Day 7 Folder](./Day-7)
+
+---
+
+## 📅 Day 8: AI Resume Builder
+On our eighth day, we constructed a comprehensive AI-powered Resume Builder application:
+- **Intelligent Information Extraction**: Built an AI chat interface that extracts all personal details, work experience, and education directly from a single conversational message, eliminating tedious forms.
+- **Persistent Sessions & Auth**: Integrated a secure JWT authentication system and persistent chat history via MongoDB, allowing users to track multiple resume-building sessions.
+- **Dynamic Resume Generation**: Generated real-time template previews using data extracted from the chat.
+- **Real-time Communication**: Achieved fluid conversation and parsing utilizing Socket.IO on the backend for real-time bidirectional transmission.
+
+### 🧠 Modern AI Workflows
+Day 8 was all about UX (User Experience). Complex multi-step form-filling sequences were replaced with intelligent AI agents that iteratively gather needed details naturally. Coupling this with live socket streams provides an ultra-responsive generation experience.
+
+👉 Code Examples: [Day 8 Folder](./Day-8)
+
+---
+
 ## 🛠️ Prerequisites
 This journey is designed for developers who already have experience with:
 - **JavaScript**
